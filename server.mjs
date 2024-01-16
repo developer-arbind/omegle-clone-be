@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 const server = http.createServer(app);
 app.use(express.json());
 const xrss = {
-  origin: process.env.CLIENT_HOST,
+  origin: process.env.OMEGLE_HOST,
   methods: ["POST", "GET", "PUT", "DELETE"],
 };
 app.use(cors(xrss));
@@ -126,3 +126,4 @@ app.get("/", (Req, Res) =>
     message: "no rest api here! 404",
   })
 );
+
