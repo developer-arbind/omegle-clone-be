@@ -6,7 +6,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.mjs",
-    "dev": "nodemon server.mjs"
+    "dev": "nodemon server.mjs",
+    "vercel-build": "echo api/route"
   },
   "author": "Arbind Kumar",
   "license": "MIT",
