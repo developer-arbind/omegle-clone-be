@@ -5,9 +5,9 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.mjs",
-    "dev": "nodemon server.mjs",
-    "vercel-build": "echo api/route"
+    "start": "node ./dist/server.js",
+    "precompile": "rimraf dist",
+    "compile": "concurrently \"npx tsc -w\" \" nodemon ./dist/server.js\""
   },
   "author": "Arbind Kumar",
   "license": "MIT",
@@ -16,7 +16,14 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "nodemon": "^3.0.2",
-    "socket.io": "^4.7.3"
+    "rimraf": "^5.0.5",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.5",
+    "@types/socket.io": "^3.0.2"
   }
 }
